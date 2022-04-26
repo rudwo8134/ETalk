@@ -8,10 +8,10 @@ const nextConfig = {
   images: {
     domains: ['rb.gy'],
   },
-  webpack(config) {
-    config.plugins.push(new webpack.EnvironmentPlugin(myEnv));
-    return config;
-  },
+  // webpack(config) {
+  //   config.plugins.push(new webpack.EnvironmentPlugin(myEnv));
+  //   return config;
+  // },
 };
 
 module.exports = nextConfig;
