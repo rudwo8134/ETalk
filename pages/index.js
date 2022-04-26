@@ -5,7 +5,7 @@ import Sidebar from '../Components/Sidebar.js';
 import styles from '../styles/Home.module.css';
 import { getProviders, getSession, useSession } from 'next-auth/react';
 import Login from '../Components/Login.js';
-import Modal from '../components/Modal.js';
+import Modal from '../Components/Modal.js';
 import { useRecoilState } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
 import Widgets from '../Components/Widget.js';

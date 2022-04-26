@@ -10,10 +10,10 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
-import Modal from '../components/Modal.js';
+import Modal from '../Components/Modal.js';
 import Sidebar from '../Components/Sidebar.js';
 import Login from '../Components/Login.js';
-import Post from '../components/Post.js';
+import Post from '../Components/Post.js';
 import { db } from '../firebase';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 
