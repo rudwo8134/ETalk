@@ -34,7 +34,7 @@ function PostPage({ trendingResults, followResults, providers }) {
       onSnapshot(doc(db, 'posts', id), (snapshot) => {
         setPost(snapshot.data());
       }),
-    [db]
+    [db, id]
   );
 
   useEffect(
@@ -55,7 +55,7 @@ function PostPage({ trendingResults, followResults, providers }) {
     <div>
       <Head>
         <title>
-          {post?.username} on Twitter: "{post?.text}"
+          {post?.username} on Twitter: {post?.text}
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -99,12 +99,12 @@ function PostPage({ trendingResults, followResults, providers }) {
 export default PostPage;
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch('https://jsonkeeper.com/b/NKEV').then(
-    (res) => res.json()
-  );
-  const followResults = await fetch('https://jsonkeeper.com/b/WWMJ').then(
-    (res) => res.json()
-  );
+  const trendingResults = await fetch(
+    'https://jsonkeeper.com/b/NKEV'
+  ).then((res) => res.json());
+  const followResults = await fetch(
+    'https://jsonkeeper.com/b/WWMJ'
+  ).then((res) => res.json());
   const providers = await getProviders();
   const session = await getSession(context);
 

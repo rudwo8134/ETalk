@@ -17,7 +17,7 @@ function Widgets({ trendingResults, followResults }) {
       </div>
 
       <div className="text-[#d9d9d9] space-y-3 bg-[#15181c] pt-2 rounded-xl w-11/12 xl:w-9/12">
-        <h4 className="font-bold text-xl px-4">What's happening</h4>
+        <h4 className="font-bold text-xl px-4">What&apos;s happening</h4>
         {trendingResults.map((result, index) => (
           <Trending key={index} result={result} />
         ))}
@@ -39,6 +39,7 @@ function Widgets({ trendingResults, followResults }) {
               height={50}
               objectFit="cover"
               className="rounded-full"
+              alt="user Image"
             />
             <div className="ml-4 leading-5 group">
               <h4 className="font-bold group-hover:underline">
