@@ -32,7 +32,7 @@ export default function Home({ trendingResults, followResults, providers }) {
           trendingResults={trendingResults}
           followResults={followResults}
         />
-
+{/* lol */}
         {isOpen && <Modal />}
       </main>
     </div>
