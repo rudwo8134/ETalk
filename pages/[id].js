@@ -10,16 +10,16 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
-import Modal from '../components/Modal';
-import Sidebar from '../Components/Sidebar';
-import Login from '../Components/Login';
-import Post from '../components/Post';
+import Modal from '../components/Modal.js';
+import Sidebar from '../Components/Sidebar.js';
+import Login from '../Components/Login.js';
+import Post from '../components/Post.js';
 import { db } from '../firebase';
 import { ArrowLeftIcon } from '@heroicons/react/solid';
 
 import Head from 'next/head';
-import Comment from '../Components/Comment';
-import Widgets from '../Components/Widget';
+import Comment from '../Components/Comment.js';
+import Widgets from '../Components/Widget.js';
 
 function PostPage({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();

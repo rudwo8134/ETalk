@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Feed from '../Components/Feed';
-import Sidebar from '../Components/Sidebar';
+import Sidebar from '../Components/Sidebar.js';
 import styles from '../styles/Home.module.css';
 import { getProviders, getSession, useSession } from 'next-auth/react';
-import Login from '../Components/Login';
-import Modal from '../Components/Modal';
+import Login from '../Components/Login.js';
+import Modal from '../components/Modal.js';
 import { useRecoilState } from 'recoil';
 import { modalState } from '../atoms/modalAtom';
-import Widgets from '../Components/Widget';
+import Widgets from '../Components/Widget.js';
 
 export default function Home({ trendingResults, followResults, providers }) {
   const { data: session } = useSession();
@@ -32,7 +32,7 @@ export default function Home({ trendingResults, followResults, providers }) {
           trendingResults={trendingResults}
           followResults={followResults}
         />
-{/* lol */}
+        {/* lol */}
         {isOpen && <Modal />}
       </main>
     </div>
@@ -40,12 +40,12 @@ export default function Home({ trendingResults, followResults, providers }) {
 }
 
 export async function getServerSideProps(context) {
-  const trendingResults = await fetch('https://jsonkeeper.com/b/NKEV').then(
-    (res) => res.json()
-  );
-  const followResults = await fetch('https://jsonkeeper.com/b/WWMJ').then(
-    (res) => res.json()
-  );
+  const trendingResults = await fetch(
+    'https://jsonkeeper.com/b/NKEV'
+  ).then((res) => res.json());
+  const followResults = await fetch(
+    'https://jsonkeeper.com/b/WWMJ'
+  ).then((res) => res.json());
   const providers = await getProviders();
   const session = await getSession(context);
 
